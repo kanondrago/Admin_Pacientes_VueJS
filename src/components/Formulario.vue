@@ -43,10 +43,7 @@
         <Alerta
             v-if="alerta.mensaje"
             :alerta="alerta"
-        >
-
-
-        </Alerta>
+        />
 
         <form 
             class="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
