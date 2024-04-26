@@ -1,5 +1,9 @@
 <script setup>
-    
+    import { ref } from 'vue';
+
+    const nombre = ref('Gio');
+
+
 </script>
 
 
@@ -15,6 +19,8 @@
             class="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
             action="">
 
+            {{ nombre }}
+
             <div class="mb-5">
                 <label 
                     class="block text-gray-700 uppercase font-bold"
@@ -28,6 +34,8 @@
                     type="text"
                     placeholder="Nombre de la mascota"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    v-bind:value="nombre"
+                    v-on:input="(e) => nombre = e.target.value"
                 >
             </div>
 
