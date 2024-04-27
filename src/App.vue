@@ -23,15 +23,18 @@
     <div class="mt-12 md:flex">
 
       <Formulario
-        v-model="paciente"
-
+        v-model:nombre="paciente.nombre"
+        v-model:propietario="paciente.propietario"
+        v-model:email="paciente.email"
+        v-model:alta="paciente.alta"
+        v-model:sintomas="paciente.sintomas"
       ></Formulario>
       
       <div class="md:w-1/2 md:h-screen overflow-y-scroll">
         <h3 class="font-black text-3xl text-center">Administra tus pacientes</h3>
 
         <div v-if="pacientes.length>0">
-
+          <h3 class="text-center mt-20">Hay Pacientes</h3>
         </div>
         <p v-else class="mt-20 text-2xl text-center">No hay pacientes</p>
       </div>
