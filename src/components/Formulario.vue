@@ -2,23 +2,16 @@
     import { ref, reactive } from 'vue';
     import Alerta from './Alerta.vue'
 
+    const model = defineModel();
+
     const alerta = reactive({
         tipo: '',
         mensaje: '',
     })
 
-    // reactive SIEMPRE es un objeto
-    const paciente = reactive({
-        nombre: '',
-        propietario: '',
-        email: '',
-        alta: '',
-        sintomas: ''
-    });
-
     const validar = () => {
 
-        if(Object.values(paciente).includes('')){
+        if(Object.values(model.value).includes('')){
             alerta.mensaje = 'Todos los campos son obligatorios';
             alerta.tipo = 'error';
             return
@@ -64,7 +57,7 @@
                     type="text"
                     placeholder="Nombre de la mascota"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                    v-model="paciente.nombre"
+                    v-model="model.nombre"
                 >
             </div>
 
@@ -81,7 +74,7 @@
                     type="text"
                     placeholder="Nombre del propietario"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                    v-model="paciente.propietario"
+                    v-model="model.propietario"
                 >
             </div>
 
@@ -98,7 +91,7 @@
                     type="email"
                     placeholder="Email del propietario"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                    v-model="paciente.email"
+                    v-model="model.email"
                 >
             </div>
 
@@ -114,7 +107,7 @@
                     id="alta"
                     type="date"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                    v-model="paciente.alta"
+                    v-model="model.alta"
                 >
             </div>
 
@@ -130,7 +123,7 @@
                     id="sintomas"
                     placeholder="Describe los sintomas"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md h-40"
-                    v-model="paciente.sintomas"
+                    v-model="model.sintomas"
                 />
             </div>
 
